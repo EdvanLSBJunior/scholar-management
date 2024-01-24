@@ -1,0 +1,5 @@
+INSERT INTO tb_scholars(scholar_name,document_type,document_number,registration_date,code_payment, agency_number, account_number) VALUES ('Keo Coelho','CPF',322223322223,'2024-01-17 11:00:59', 1, '2321', '300002');
+INSERT INTO tb_scholars(scholar_name,document_type,document_number,registration_date,code_payment, agency_number, account_number) VALUES ('Edvanced','RG',322223322223,'2024-01-17 11:00:59', 260, '0001', '006502');
+INSERT INTO tb_scholars(scholar_name,document_type,document_number,registration_date,code_payment, agency_number, account_number) VALUES ('Micael','CNH',322223322223,'2024-01-17 11:00:59', 104, '7654', '005602');
+INSERT INTO tb_scholars(scholar_name,document_type,document_number,registration_date,code_payment, agency_number, account_number) VALUES ('Micael Leandro','CPF',322223322223,'2024-01-17 11:00:59', 341, '7686', '600002');
+INSERT INTO tb_scholars(scholar_name,document_type,document_number,registration_date,code_payment, agency_number, account_number) VALUES ('Daiana Michels','CPF',322223322223,'2024-01-17 11:00:59', 237, '4355', '400002');
