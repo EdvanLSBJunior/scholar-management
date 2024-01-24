@@ -16,9 +16,9 @@ O **Scholar Management** consiste em uma aplicação completa para gerenciar bol
   - JUnit 4
 
 - **Banco de dados:**
-- H2
+  - H2
 
-  - **Doc:**
+- **Doc:**
   - Swagger
 
 - **Frontend:**
