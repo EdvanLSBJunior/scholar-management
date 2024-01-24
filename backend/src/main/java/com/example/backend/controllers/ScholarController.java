@@ -80,7 +80,7 @@ public class ScholarController {
             service.removeScholar(id);
             return ResponseEntity.status(HttpStatus.OK).body("Removido com sucesso");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nao encontrado");
         }
     }
 }
