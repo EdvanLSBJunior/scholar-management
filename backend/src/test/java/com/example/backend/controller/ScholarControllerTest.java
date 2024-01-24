@@ -114,14 +114,11 @@ public class ScholarControllerTest {
 
     @Test
     public void testRemoveScholar_Success() {
-        // Arrange
         Long validScholarId = 1L;
         doNothing().when(scholarService).removeScholar(validScholarId);
 
-        // Act
         ResponseEntity<String> responseEntity = scholarControllerMock.removeScholar(validScholarId);
 
-        // Assert
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals("Removido com sucesso", responseEntity.getBody());
         verify(scholarService, times(1)).removeScholar(validScholarId);
@@ -129,14 +126,11 @@ public class ScholarControllerTest {
 
     @Test
     public void testRemoveScholar_NotFound() {
-        // Arrange
         Long invalidScholarId = -1L;
         doThrow(NotFoundException.class).when(scholarService).removeScholar(invalidScholarId);
 
-        // Act
         ResponseEntity<String> responseEntity = scholarControllerMock.removeScholar(invalidScholarId);
 
-        // Assert
         assertEquals(HttpStatus.BAD_REQUEST, responseEntity.getStatusCode());
         assertEquals("Nao encontrado", responseEntity.getBody());
         verify(scholarService, times(1)).removeScholar(invalidScholarId);
