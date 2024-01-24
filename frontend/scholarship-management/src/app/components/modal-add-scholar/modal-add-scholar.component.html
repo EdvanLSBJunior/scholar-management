@@ -1,0 +1,52 @@
+<div class="modal-header">
+  <h1 class="modal-title fs-5" id="exampleModalLabel">Inserir bolsista</h1>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+    (click)="closeModal()"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formData">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome:</label>
+      <input type="text" class="form-control" id="nome" formControlName="scholarName" required />
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo de identificador:</label>
+        <select class="form-select" formControlName="documentType" (change)="onSelectChange($event)">
+          <option disabled selected>Selecionar</option>
+          <option *ngFor="let type of documentType" [value]="type.value">{{ type.label }}</option>
+        </select>
+      </div>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Numero do documento:</label>
+        <input type="text" class="form-control" id="documento" formControlName="documentNumber" required />
+      </div>
+    <div class="mb-3">
+      <label class="form-label" for="exampleCheck1">Banco:</label>
+      <select class="form-select" formControlName="codePayment" (change)="onSelectChangeBank($event)">
+        <option disabled selected>Selecionar</option>
+        <option *ngFor="let bank of bankName" [value]="bank.value">{{bank.label}}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="agencia" class="form-label">Agência:</label>
+      <input type="text" class="form-control" id="agencia" formControlName="agencyNumber" required />
+    </div>
+    <div class="mb-3">
+      <label for="conta" class="form-label">Conta:</label>
+      <input type="text" class="form-control" id="conta" formControlName="accountNumber" required />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">
+    Fechar
+  </button>
+  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="saveScholar(uniqueScholar)">
+    Salvar
+  </button>
+</div>
