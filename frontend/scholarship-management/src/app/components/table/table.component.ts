@@ -6,6 +6,7 @@ import { SharedDataService } from './shared-data.service';
 import { Scholar } from '../entities/scholar';
 import { DataService } from '../util/data.service';
 import { Subscription } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-table',
@@ -20,7 +21,8 @@ export class TableComponent implements  OnInit, OnDestroy {
     private modalService: NgbModal,
     private tableService: TableService,
     private sharedDataService: SharedDataService,
-    private dataService: DataService
+    private dataService: DataService,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit() {
@@ -77,6 +79,10 @@ export class TableComponent implements  OnInit, OnDestroy {
         }
       );
     }
+  }
+
+  formatDate(date: Date): string {
+    return this.datePipe.transform(date, 'yyyy-MM-dd HH:mm:ss') || '';
   }
 
   updateList() {

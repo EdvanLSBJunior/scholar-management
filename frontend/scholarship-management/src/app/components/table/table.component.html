@@ -41,7 +41,7 @@
                 <td>{{ item.documentType }}</td>
                 <td><span>{{ item.documentNumber }}</span></td>
                 <td>{{ getBankName(item.codePayment) + ' - ' + item.agencyNumber + '/' + item.accountNumber }}</td>
-                <td>{{ item.registrationDate }}</td>
+                <td>{{ formatDate(item.registrationDate) }}</td>
                 <td>
                   <ul class="list-unstyled mb-0 d-flex justify-content-end">
                     <li class="mr-3" style="padding-right: 10px">
